@@ -4,7 +4,7 @@
 
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	void AudioManager::loadMusic(const std::string path)
 	{

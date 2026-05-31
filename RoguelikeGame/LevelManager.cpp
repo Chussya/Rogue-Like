@@ -7,7 +7,7 @@
 #include "Util.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	int LevelManager::getMaxLevel() const
 	{

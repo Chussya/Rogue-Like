@@ -3,7 +3,7 @@
 #include "Shell.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	Platform::Platform(Vector2Df pos) :
 		width{ GAME_SETTINGS.PLATFORM_WIDTH_DEFAULT },

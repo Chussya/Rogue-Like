@@ -3,7 +3,7 @@
 #include "Platform.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	// Private
 

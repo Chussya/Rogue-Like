@@ -3,7 +3,7 @@
 #include "MenuItem.h"
 #include "GameStateData.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class GameStateGameOverData : public GameStateData
 	{

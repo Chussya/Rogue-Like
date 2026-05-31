@@ -2,10 +2,10 @@
 
 #include <cstdlib>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	Application::Application() : game(),
-		window(sf::VideoMode(GAME_SETTINGS.SCREEN_WIDTH_GAME, GAME_SETTINGS.SCREEN_HEIGHT_GAME), "Arkanoid Game")
+		window(sf::VideoMode(GAME_SETTINGS.SCREEN_WIDTH_GAME, GAME_SETTINGS.SCREEN_HEIGHT_GAME), "Roguelike Game")
 	{
 		// Init random number generator
 

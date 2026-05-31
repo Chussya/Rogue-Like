@@ -9,7 +9,7 @@
 #include "AudioManager.h"
 #include "LevelManager.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Game
 	{

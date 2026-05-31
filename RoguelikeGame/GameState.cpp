@@ -11,7 +11,7 @@
 #include "GameStateVictory.h"
 #include "GameStateGameOver.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	GameState::GameState(EGameStateType type, bool isExclusivelyVisible) : type{type}, isExclusivelyVisible{ isExclusivelyVisible }
 	{

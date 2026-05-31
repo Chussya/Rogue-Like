@@ -7,7 +7,7 @@
 #include "Collidable.h"
 #include "IObservable.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class GameSettings;
 

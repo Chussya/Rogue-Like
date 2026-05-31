@@ -2,7 +2,7 @@
 
 #include "GameStateData.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class GameStateLeaderboardData : public GameStateData
 	{

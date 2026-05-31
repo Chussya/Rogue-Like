@@ -8,7 +8,7 @@
 #include "GameObject.h"
 #include "Vector2D.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Effect : public GameObject, public Collidable, public IObservable
 	{

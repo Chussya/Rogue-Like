@@ -7,7 +7,7 @@
 #include "MenuItem.h"
 #include "Application.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	GameStatePlayingData::GameStatePlayingData() : tries { GAME_SETTINGS.TRIES_COUNT }
 	{

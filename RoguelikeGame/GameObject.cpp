@@ -4,7 +4,7 @@
 
 #include "Util.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	// Public
 
