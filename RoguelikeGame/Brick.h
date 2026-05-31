@@ -7,7 +7,7 @@
 #include "IObservable.h"
 #include "GameObject.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Shell;
 	class GameSettings;

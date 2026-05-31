@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class GameSettings
 	{

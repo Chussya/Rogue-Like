@@ -6,7 +6,7 @@
 #include "Application.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	void GameStateGameOverData::init()
 	{

@@ -1,6 +1,6 @@
 #include "Util.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	std::string Util::UString::stringFormat(std::string s1, std::string s2, const char sym, const size_t length)
 	{

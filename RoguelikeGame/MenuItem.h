@@ -7,7 +7,7 @@
 #include "Util.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	template<class F>
 	class MenuItem

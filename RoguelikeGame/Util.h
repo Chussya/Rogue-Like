@@ -4,7 +4,7 @@
 
 #include "Vector2D.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	enum class EGameWindowEvent
 	{

@@ -5,7 +5,7 @@
 #include "Shell.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	Brick::Brick(const Vector2Df& pos, const sf::Color& color) :
 		fadeSpeed{ GAME_SETTINGS.getFadeSpeed() },

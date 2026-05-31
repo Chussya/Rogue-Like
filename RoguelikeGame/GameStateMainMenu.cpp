@@ -7,7 +7,7 @@
 #include "Application.h"
 #include "GameSettings.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	void GameStateMainMenuData::handleWindowEvent(const sf::Event& event)
 	{

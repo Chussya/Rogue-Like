@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	using Record = std::pair<std::string, int>;
 	using RecordsMap = std::unordered_map<std::string, int>;

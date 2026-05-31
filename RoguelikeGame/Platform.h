@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "Collidable.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Shell;
 	class GameSettings;

@@ -2,7 +2,7 @@
 
 #include <array>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	enum class BrickType
 	{

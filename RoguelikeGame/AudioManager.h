@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <SFML/Audio.hpp>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class AudioManager
 	{

@@ -2,7 +2,7 @@
 
 #include "Brick.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	void BrickFactory::clearCounter()
 	{

@@ -2,6 +2,6 @@
 
 #include <algorithm>
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 }

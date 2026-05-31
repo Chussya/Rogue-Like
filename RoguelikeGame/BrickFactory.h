@@ -5,7 +5,7 @@
 
 #include "Vector2D.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Brick;
 

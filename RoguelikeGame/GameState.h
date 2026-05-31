@@ -5,7 +5,7 @@
 
 #include "GameStateData.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	class Game;
 

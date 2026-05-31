@@ -4,7 +4,7 @@
 
 #include "GameStatePlaying.h"
 
-namespace ArkanoidGame
+namespace RoguelikeGame
 {
 	// Private
 
