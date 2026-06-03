@@ -3,13 +3,7 @@
 #include <cassert>
 
 #include "Game.h"
-#include "GameStatePlaying.h"
 #include "GameStateMainMenu.h"
-#include "GameStatePause.h"
-#include "GameStateLeaderboard.h"
-#include "GameStateOptions.h"
-#include "GameStateVictory.h"
-#include "GameStateGameOver.h"
 
 namespace RoguelikeGame
 {
@@ -20,36 +14,6 @@ namespace RoguelikeGame
 		case EGameStateType::MainMenu:
 		{
 			data = std::make_unique<GameStateMainMenuData>();
-			break;
-		}
-		case EGameStateType::Leaderboard:
-		{
-			data = std::make_unique<GameStateLeaderboardData>();
-			break;
-		}
-		case EGameStateType::Options:
-		{
-			data = std::make_unique<GameStateOptionsData>();
-			break;
-		}
-		case EGameStateType::Playing:
-		{
-			data = std::make_unique<GameStatePlayingData>();
-			break;
-		}
-		case EGameStateType::Pause:
-		{
-			data = std::make_unique<GameStatePauseData>();
-			break;
-		}
-		case EGameStateType::Victory:
-		{
-			data = std::make_unique<GameStateVictoryData>();
-			break;
-		}
-		case EGameStateType::GameOver:
-		{
-			data = std::make_unique<GameStateGameOverData>();
 			break;
 		}
 		default:

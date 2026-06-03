@@ -46,6 +46,8 @@ namespace RoguelikeGame
 
 		// Game
 
+		const std::string GAME_NAME{ "ROGUELIKE" };
+
 		const int TRIES_COUNT{ 3 };
 
 		const int BRICKS_COUNT_ROW{ 14 };
