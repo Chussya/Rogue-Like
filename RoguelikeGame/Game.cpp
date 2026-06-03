@@ -2,8 +2,6 @@
 
 #include <cassert>
 
-#include "GameStatePlaying.h"
-
 namespace RoguelikeGame
 {
 	// Private
@@ -236,8 +234,8 @@ namespace RoguelikeGame
 	void Game::loadNextLevel()
 	{
 		assert(stateStack.back().getType() == EGameStateType::Playing);
-		auto playingData = (stateStack.back().getData<GameStatePlayingData>());
-		playingData->loadNextLevel();
+		//auto playingData = (stateStack.back().getData<GameStatePlayingData>());
+		//playingData->loadNextLevel();
 	}
 
 	void Game::updateGame(float timeDelta, sf::RenderWindow& window)

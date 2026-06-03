@@ -7,15 +7,6 @@
     <ClCompile Include="AudioManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Brick.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="BrickFactory.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Effect.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -31,25 +22,7 @@
     <ClCompile Include="GameState.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameStateGameOver.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStateLeaderboard.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="GameStateMainMenu.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStateOptions.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStatePause.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStatePlaying.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStateVictory.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="LevelManager.cpp">
@@ -59,12 +32,6 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="MenuItem.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Platform.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Shell.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Util.cpp">
@@ -78,13 +45,7 @@
     <ClInclude Include="AudioManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BrickFactory.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Collidable.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Effect.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -102,25 +63,7 @@
     <ClInclude Include="GameStateData.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameStateGameOver.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStateLeaderboard.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="GameStateMainMenu.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStateOptions.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStatePause.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStatePlaying.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStateVictory.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="IObservable.h">
@@ -135,22 +78,13 @@
     <ClInclude Include="MenuItem.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Record.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Shell.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Util.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Brick.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
