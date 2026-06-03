@@ -28,7 +28,8 @@ namespace RoguelikeGame
 
 		// Init Texts
 
-		Util::UGraphic::initText(title, "TO BE DONE... Press Esc to exit to menu", font, sf::Color::Yellow, 40);
+		//Util::UGraphic::initText(title, "TO BE DONE... Press Esc to exit to menu", font, sf::Color::Yellow, 30);
+		Util::UGraphic::initText(title, "TEST", font, sf::Color::Yellow, 30);
 		Util::UGraphic::setItemOrigin(title, 0.5f, 0.5f);
 	}
 
@@ -43,15 +44,5 @@ namespace RoguelikeGame
 
 	void GameStateMainMenuData::update(float deltaTime)
 	{
-		for (auto button = buttons.begin(); button != buttons.end(); ++button)
-		{
-			if (*button == *it)
-			{
-				button->onFocus();
-			} else
-			{
-				button->lostFocus();
-			}
-		}
 	}
 }
