@@ -43,15 +43,5 @@ namespace RoguelikeGame
 
 	void GameStateMainMenuData::update(float deltaTime)
 	{
-		for (auto button = buttons.begin(); button != buttons.end(); ++button)
-		{
-			if (*button == *it)
-			{
-				button->onFocus();
-			} else
-			{
-				button->lostFocus();
-			}
-		}
 	}
 }
