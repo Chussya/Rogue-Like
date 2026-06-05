@@ -1,12 +1,15 @@
 ﻿#include <SFML/Graphics.hpp>
 #include "Application.h"
+
 #include "Engine.h"
+#include "Util.h"
 
 // For engine test
 //#include <iostream>
 //#include "windows.h"
 
 using namespace RoguelikeGame;
+using namespace CustomEngine;
 
 int main()
 {
@@ -24,6 +27,10 @@ int main()
 	Engine engine;
 	engine.init();
 	engine.run();
+
+	std::string value = "1";
+
+	Util::UString::isNumeric(value);
 
 	Application::getInstance().run();
 

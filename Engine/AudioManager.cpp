@@ -1,10 +1,10 @@
+#include "pch.h"
+
 #include "AudioManager.h"
 
 #include <assert.h>
 
-#include "GameSettings.h"
-
-namespace RoguelikeGame
+namespace CustomEngine
 {
 	void AudioManager::loadMusic(const std::string path)
 	{
@@ -42,7 +42,7 @@ namespace RoguelikeGame
 	{
 		sf::Sound sound{ sounds[eSoundEffect] };
 
-		sound.setVolume(GAME_SETTINGS.getSoundVolume());
+		//sound.setVolume(GAME_SETTINGS.getSoundVolume());
 		sound.play();
 
 		while (sound.getStatus() == sf::Sound::Playing)

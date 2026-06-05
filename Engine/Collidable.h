@@ -1,13 +1,20 @@
 #pragma once
 
+// This block necessary for export to another projects
+#ifdef ENGINE_EXPORTS
+	#define ENGINE_API __declspec(dllexport)
+#else
+	#define ENGINE_API __declspec(dllimport)
+#endif // ENGINE_EXPORTS
+
 #include <memory>
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
-	class Collidable
+	class ENGINE_API Collidable
 	{
 	public:
-		enum class ECollisionShape
+		enum class ENGINE_API ECollisionShape
 		{
 			Rectangle = 1,
 			Circle,
@@ -15,7 +22,7 @@ namespace RoguelikeGame
 			Empty = 0
 		};
 
-		enum class ECollisionSide
+		enum class ENGINE_API ECollisionSide
 		{
 			Right = 1,
 			Left,

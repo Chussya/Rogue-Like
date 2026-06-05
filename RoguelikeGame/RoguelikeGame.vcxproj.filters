@@ -4,16 +4,10 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="AudioManager.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="GameMain.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="GameSettings.cpp">
@@ -25,24 +19,12 @@
     <ClCompile Include="GameStateMainMenu.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Util.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="AudioManager.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Collidable.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="GameSettings.h">
@@ -57,22 +39,7 @@
     <ClInclude Include="GameStateMainMenu.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="IObservable.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomMath.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuItem.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Record.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Util.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

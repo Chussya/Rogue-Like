@@ -3,7 +3,6 @@
 #include <cassert>
 
 #include "Util.h"
-#include "MenuItem.h"
 #include "Application.h"
 #include "GameSettings.h"
 
@@ -28,8 +27,8 @@ namespace RoguelikeGame
 
 		// Init Texts
 
-		Util::UGraphic::initText(title, "TO BE DONE... Press Esc to exit to menu", font, sf::Color::Yellow, 40);
-		Util::UGraphic::setItemOrigin(title, 0.5f, 0.5f);
+		CustomEngine::Util::UGraphic::initText(title, "TO BE DONE... Press Esc to exit to menu", font, sf::Color::Yellow, 40);
+		CustomEngine::Util::UGraphic::setItemOrigin(title, 0.5f, 0.5f);
 	}
 
 	void GameStateMainMenuData::draw(sf::RenderWindow& window)

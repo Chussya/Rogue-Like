@@ -1,21 +1,28 @@
 #pragma once
 
+// This block necessary for export to another projects
+#ifdef ENGINE_EXPORTS
+	#define ENGINE_API __declspec(dllexport)
+#else
+	#define ENGINE_API __declspec(dllimport)
+#endif // ENGINE_EXPORTS
+
 #include <SFML/Graphics.hpp>
 
 #include "Vector2D.h"
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
-	enum class EGameWindowEvent
+	enum class ENGINE_API EGameWindowEvent
 	{
 		OnFocused = 1 << 0,
 		OnClick = 1 << 1,
 	};
 
-	class Util
+	class ENGINE_API Util
 	{
 	public:
-		class UString
+		class ENGINE_API UString
 		{
 		public:
 			static std::string stringFormat(std::string s1, std::string s2, const char sym, const size_t length);
@@ -24,10 +31,10 @@ namespace RoguelikeGame
 			static bool isNumeric(const std::string& str);
 		};
 
-		class UGraphic
+		class ENGINE_API UGraphic
 		{
 		public:
-			enum class EItemOrigin
+			enum class ENGINE_API EItemOrigin
 			{
 				LeftTop = 0,
 				MidTop,

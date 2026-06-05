@@ -1,6 +1,6 @@
 #pragma once
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
 	template<class T>
 	struct Vector2D

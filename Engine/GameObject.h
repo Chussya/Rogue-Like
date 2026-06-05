@@ -1,12 +1,19 @@
 #pragma once
 
+// This block necessary for export to another projects
+#ifdef ENGINE_EXPORTS
+	#define ENGINE_API __declspec(dllexport)
+#else
+	#define ENGINE_API __declspec(dllimport)
+#endif // ENGINE_EXPORTS
+
 #include <SFML/Graphics.hpp>
 
 #include "Vector2D.h"
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
-	class GameObject
+	class ENGINE_API GameObject
 	{
 	protected:
 		sf::Sprite sprite;

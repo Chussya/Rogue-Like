@@ -1,18 +1,25 @@
 #pragma once
 
+// This block necessary for export to another projects
+#ifdef ENGINE_EXPORTS
+	#define ENGINE_API __declspec(dllexport)
+#else
+	#define ENGINE_API __declspec(dllimport)
+#endif // ENGINE_EXPORTS
+
 #include <random>
 
 #include "Vector2D.h"
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
-	class Math
+	class ENGINE_API Math
 	{
 	public:
 		const float PI{ 3.14159f };
 
-		template <class Enum>
-		class BitMask
+		template <class ENGINE_API Enum>
+		class ENGINE_API BitMask
 		{
 		private:
 			int mask;

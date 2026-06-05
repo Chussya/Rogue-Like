@@ -1,14 +1,21 @@
 #pragma once
 
+// This block necessary for export to another projects
+#ifdef ENGINE_EXPORTS
+	#define ENGINE_API __declspec(dllexport)
+#else
+	#define ENGINE_API __declspec(dllimport)
+#endif // ENGINE_EXPORTS
+
 #include <unordered_map>
 #include <SFML/Audio.hpp>
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
-	class AudioManager
+	class ENGINE_API AudioManager
 	{
 	public:
-		enum class ESoundEffect
+		enum class ENGINE_API ESoundEffect
 		{
 			Death = 1,
 			Hit,

@@ -6,8 +6,8 @@
 #include "Record.h"
 #include "GameState.h"
 #include "GameSettings.h"
+
 #include "AudioManager.h"
-#include "LevelManager.h"
 
 namespace RoguelikeGame
 {
@@ -22,7 +22,7 @@ namespace RoguelikeGame
 		Record playerRecord;
 		RecordsMap records;
 
-		AudioManager audio;
+		CustomEngine::AudioManager audio;
 
 		// General methods
 
@@ -47,7 +47,7 @@ namespace RoguelikeGame
 
 		Record getPlayerRecord();
 		RecordsMap getRecords();
-		AudioManager& getAudio();
+		CustomEngine::AudioManager& getAudio();
 
 		// Records logic
 

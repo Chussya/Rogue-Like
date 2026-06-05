@@ -1,10 +1,12 @@
+#include "pch.h"
+
 #include "GameObject.h"
 
 #include <cassert>
 
 #include "Util.h"
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
 	// Public
 

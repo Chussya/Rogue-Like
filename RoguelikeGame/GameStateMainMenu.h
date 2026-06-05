@@ -1,6 +1,5 @@
 #pragma once
 
-#include "MenuItem.h"
 #include "GameStateData.h"
 
 namespace RoguelikeGame
@@ -15,14 +14,6 @@ namespace RoguelikeGame
 		/// Texts
 
 		sf::Text title;
-
-		/// Buttons
-
-		// Actual (focused) button
-		active it;
-
-		// All window buttons
-		std::list<MenuItem<call>> buttons;
 
 	public:
 		GameStateMainMenuData() = default;
