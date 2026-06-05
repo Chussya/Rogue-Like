@@ -7,6 +7,28 @@ namespace CustomEngine
 	{
 		T x = { 0 };
 		T y = { 0 };
+
+		Vector2D()
+		{
+			x = { 0 };
+			y = { 0 };
+		}
+
+		Vector2D(T newX, T newY)
+		{
+			x = { newX };
+			y = { newY };
+		}
+
+		float getLength()
+		{
+			return sqrtf(x * x + y * y);
+		}
+
+		float dotProduct(const Vector2D<T>& v)
+		{
+			return x * v.x + y * v.y;
+		}
 	};
 
 	using Vector2Df = Vector2D<float>;
@@ -25,9 +47,27 @@ namespace CustomEngine
 	}
 
 	template<class T>
+	Vector2D<T> operator-(const Vector2D<T> &v)
+	{
+		return { -v.x, -v.y};
+	}
+
+	template<class T>
 	Vector2D<T> operator*(const Vector2D<T> &v1, const Vector2D<T> &v2)
 	{
 		return { v1.x * v2.x, v1.y * v2.y };
+	}
+
+	template<class T>
+	Vector2D<T> operator*(const Vector2D<T>& v, const T scalar)
+	{
+		return { scalar * v.x, scalar * v.y };
+	}
+
+	template<class T>
+	Vector2D<T> operator*(const T scalar, const Vector2D<T>& v)
+	{
+		return { scalar * v.x, scalar * v.y };
 	}
 
 	template<class T>
@@ -40,6 +80,12 @@ namespace CustomEngine
 	bool operator==(const Vector2D<T> &v1, const Vector2D<T> &v2)
 	{
 		return v1.x == v2.x && v1.y == v2.y;
+	}
+
+	template<class T>
+	bool operator!=(const Vector2D<T> &v1, const Vector2D<T> &v2)
+	{
+		return v1.x != v2.x || v1.y != v2.y;
 	}
 
 	template<class T>
