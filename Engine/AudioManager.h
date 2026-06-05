@@ -1,21 +1,14 @@
 #pragma once
 
-// This block necessary for export to another projects
-#ifdef ENGINE_EXPORTS
-	#define ENGINE_API __declspec(dllexport)
-#else
-	#define ENGINE_API __declspec(dllimport)
-#endif // ENGINE_EXPORTS
-
 #include <unordered_map>
 #include <SFML/Audio.hpp>
 
 namespace CustomEngine
 {
-	class ENGINE_API AudioManager
+	class AudioManager
 	{
 	public:
-		enum class ENGINE_API ESoundEffect
+		enum class ESoundEffect
 		{
 			Death = 1,
 			Hit,
@@ -29,17 +22,17 @@ namespace CustomEngine
 		sf::Music music;
 
 	public:
-		void loadMusic(const std::string path);
-		void loadSoundBuffer(const ESoundEffect eSoundEffect, const std::string& path);
+		__declspec(dllexport) void loadMusic(const std::string path);
+		__declspec(dllexport) void loadSoundBuffer(const ESoundEffect eSoundEffect, const std::string& path);
 
-		sf::SoundBuffer& getSoundBuffer(const ESoundEffect eSoundEffect);
+		__declspec(dllexport) sf::SoundBuffer& getSoundBuffer(const ESoundEffect eSoundEffect);
 
-		bool isMusicPlaying();
+		__declspec(dllexport) bool isMusicPlaying();
 
-		void setMusicVolume(const float volume);
+		__declspec(dllexport) void setMusicVolume(const float volume);
 
-		void playFullSound(const ESoundEffect eSoundEffect);
-		void playMusic();
-		void stopMusic();
+		__declspec(dllexport) void playFullSound(const ESoundEffect eSoundEffect);
+		__declspec(dllexport) void playMusic();
+		__declspec(dllexport) void stopMusic();
 	};
 }

@@ -1,20 +1,13 @@
 #pragma once
 
-// This block necessary for export to another projects
-#ifdef ENGINE_EXPORTS
-	#define ENGINE_API __declspec(dllexport)
-#else
-	#define ENGINE_API __declspec(dllimport)
-#endif // ENGINE_EXPORTS
-
 #include <memory>
 
 namespace CustomEngine
 {
-	class ENGINE_API Collidable
+	class Collidable
 	{
 	public:
-		enum class ENGINE_API ECollisionShape
+		enum class ECollisionShape
 		{
 			Rectangle = 1,
 			Circle,
@@ -22,7 +15,7 @@ namespace CustomEngine
 			Empty = 0
 		};
 
-		enum class ENGINE_API ECollisionSide
+		enum class ECollisionSide
 		{
 			Right = 1,
 			Left,
@@ -44,20 +37,20 @@ namespace CustomEngine
 		virtual void onHit() { collision = ECollisionSide::Empty; };
 
 	public:
-		Collidable(ECollisionShape shape) : shape{ shape }, collision { ECollisionSide::Empty } {}
-		virtual ~Collidable() = default;
+		__declspec(dllexport) Collidable(ECollisionShape shape) : shape{ shape }, collision { ECollisionSide::Empty } {}
+		__declspec(dllexport) virtual ~Collidable() = default;
 
 		// Setters
 
-		virtual void setCollisionSide(ECollisionSide collision) { this->collision = collision; }
+		__declspec(dllexport) virtual void setCollisionSide(ECollisionSide collision) { this->collision = collision; }
 
 		// No signature methods:
 
-		virtual bool isCollide(std::shared_ptr<Collidable> collidable) = 0;
+		__declspec(dllexport) virtual bool isCollide(std::shared_ptr<Collidable> collidable) = 0;
 
 		// Signatures methods
 
-		virtual bool checkCollision(std::shared_ptr<Collidable> collidable)
+		__declspec(dllexport) virtual bool checkCollision(std::shared_ptr<Collidable> collidable)
 		{
 			if (isCollide(collidable))
 			{
