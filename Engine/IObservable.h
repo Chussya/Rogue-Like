@@ -4,14 +4,14 @@
 #include <vector>
 #include <algorithm>
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
 	class IObserver;
 
 	class IObservable : public std::enable_shared_from_this<IObservable>
 	{
 	public:
-		void AddObserver(std::weak_ptr<IObserver> observer)
+		__declspec(dllexport) void AddObserver(std::weak_ptr<IObserver> observer)
 		{
 			observers.push_back(observer);
 		}
@@ -35,6 +35,6 @@ namespace RoguelikeGame
 	class IObserver
 	{
 	public:
-		virtual void Notify(std::shared_ptr<IObservable> observable) = 0;
+		__declspec(dllexport) virtual void Notify(std::shared_ptr<IObservable> observable) = 0;
 	};
 }

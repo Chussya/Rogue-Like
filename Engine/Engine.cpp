@@ -2,14 +2,17 @@
 #include "Engine.h"
 #include <iostream>
 
-Engine::Engine(){}
-
-void Engine::init()
+namespace CustomEngine
 {
-	std::cout << "Engine initialized" << std::endl;
-}
+	Engine::Engine() {}
 
-void Engine::run()
-{
-	std::cout << "Engine started" << std::endl;
+	void Engine::init()
+	{
+		std::cout << "Engine initialized" << std::endl;
+	}
+
+	void Engine::run()
+	{
+		std::cout << "Engine started" << std::endl;
+	}
 }

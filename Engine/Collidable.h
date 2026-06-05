@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace RoguelikeGame
+namespace CustomEngine
 {
 	class Collidable
 	{
@@ -37,20 +37,20 @@ namespace RoguelikeGame
 		virtual void onHit() { collision = ECollisionSide::Empty; };
 
 	public:
-		Collidable(ECollisionShape shape) : shape{ shape }, collision { ECollisionSide::Empty } {}
-		virtual ~Collidable() = default;
+		__declspec(dllexport) Collidable(ECollisionShape shape) : shape{ shape }, collision { ECollisionSide::Empty } {}
+		__declspec(dllexport) virtual ~Collidable() = default;
 
 		// Setters
 
-		virtual void setCollisionSide(ECollisionSide collision) { this->collision = collision; }
+		__declspec(dllexport) virtual void setCollisionSide(ECollisionSide collision) { this->collision = collision; }
 
 		// No signature methods:
 
-		virtual bool isCollide(std::shared_ptr<Collidable> collidable) = 0;
+		__declspec(dllexport) virtual bool isCollide(std::shared_ptr<Collidable> collidable) = 0;
 
 		// Signatures methods
 
-		virtual bool checkCollision(std::shared_ptr<Collidable> collidable)
+		__declspec(dllexport) virtual bool checkCollision(std::shared_ptr<Collidable> collidable)
 		{
 			if (isCollide(collidable))
 			{
