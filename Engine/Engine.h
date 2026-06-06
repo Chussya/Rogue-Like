@@ -1,20 +1,21 @@
 #pragma once
 
-// This block necessary for export to another projects
-#ifdef ENGINE_EXPORTS
-	#define ENGINE_API __declspec(dllexport)
-#else
-	#define ENGINE_API __declspec(dllimport)
-#endif // ENGINE_EXPORTS
+#include "SFML/Graphics.hpp"
 
 namespace CustomEngine
 {
-	class ENGINE_API Engine
+	class Engine
 	{
-	public:
+	private:
 		Engine();
+		~Engine() = default;
 
-		void init();
+	public:
+		Engine(const Engine& app) = delete;
+		Engine& operator= (const Engine&) = delete;
+
+		static Engine* getInstance();
+
 		void run();
 	};
 }
