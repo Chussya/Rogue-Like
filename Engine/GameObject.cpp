@@ -2,47 +2,35 @@
 
 #include "GameObject.h"
 
-#include <cassert>
-
-#include "Util.h"
-
 namespace CustomEngine
 {
-	// Public
-
-	GameObject::GameObject(const std::string& texturePath, const Vector2Df& position, float width, float height)
+	GameObject::GameObject()
 	{
-		assert(texture.loadFromFile(texturePath));
-
-		Util::UGraphic::initSprite(sprite, width, height, texture);
-		sprite.setPosition(convert<sf::Vector2f>(position));
+		addComponent<TransformComponent>();
 	}
 
-	void GameObject::drawOnWindow(sf::RenderWindow& window)
+	GameObject::~GameObject()
 	{
-		Util::UGraphic::drawSprite(sprite, window);
+		for (auto component : components)
+		{
+			delete component;
+		}
+		components.clear();
 	}
 
-	Vector2Df GameObject::getPosition() const
+	void GameObject::update(float deltaTime)
 	{
-		return convert<Vector2Df>(sprite.getPosition());
+		for (auto& component : components)
+		{
+			component->update(deltaTime);
+		}
 	}
 
-	sf::FloatRect GameObject::getRect() const
+	void GameObject::render()
 	{
-		return sprite.getGlobalBounds();
-	}
-
-	void GameObject::setSpriteOrigin(const float originX, const float originY)
-	{
-		Util::UGraphic::setItemOrigin(sprite, originX, originY);
-	}
-
-	void GameObject::updateSpriteSize(const float width, const float height)
-	{
-		const float scaleX{ width / sprite.getGlobalBounds().width };
-		const float scaleY{ height / sprite.getGlobalBounds().height };
-
-		sprite.scale(scaleX, scaleY);
+		for (auto& component : components)
+		{
+			component->render();
+		}
 	}
 }
