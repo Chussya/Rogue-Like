@@ -11,10 +11,17 @@ namespace CustomEngine
 	class GameObject
 	{
 	private:
+		std::string name;
+
+		std::vector<GameObject*> children = {};
 		std::vector<Component*> components{};
+
+		void addChild(GameObject* child);
+		void removeChild(GameObject* child);
 
 	public:
 		GameObject();
+		GameObject(std::string name);
 		~GameObject();
 
 		template<typename C>
@@ -68,7 +75,68 @@ namespace CustomEngine
 			return nullptr;
 		}
 
+		template <typename T>
+		T* getComponentInChildren() const
+		{
+			T* component = getComponent<T>();
+			if (component != nullptr || children.size() == 0)
+			{
+				return component;
+			}
+
+			for (const auto& child : children)
+			{
+				T* childComponent = child->getComponentInChildren<T>();
+				if (childComponent != nullptr)
+				{
+					return childComponent;
+				}
+			}
+
+			return nullptr;
+		}
+
+		template <typename T>
+		std::vector<T*> getComponents() const
+		{
+			std::vector<T*> result;
+			for (const auto& component : components)
+			{
+				if (auto casted = dynamic_cast<T*>(component))
+				{
+					result.push_back(casted);
+				}
+			}
+			return result;
+		}
+
+		template <typename T>
+		std::vector<T*> getComponentsInChildren() const
+		{
+			std::vector<T*> result;
+			for (const auto& component : getComponents<T>())
+			{
+				result.push_back(component);
+			}
+
+			for (const auto& child : children)
+			{
+				for (const auto& childComponent : child->getComponentsInChildren<T>())
+				{
+					result.push_back(childComponent);
+				}
+			}
+
+			return result;
+		}
+
+		std::string getName() const;
+		void print(int depth = 0) const;
+
 		void update(float deltaTime);
 		void render();
+
+		friend class GameWorld;
+		friend class TransformComponent;
 	};
 }

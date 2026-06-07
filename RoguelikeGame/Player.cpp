@@ -1,6 +1,7 @@
 #include "Player.h"
 
 #include <ResourceSystem.h>
+#include <SpriteColliderComponent.h>
 
 namespace RoguelikeGame
 {
@@ -17,6 +18,12 @@ namespace RoguelikeGame
 		playerCamera->setBaseResolution(1280, 720);
 
 		auto playerInput = ptrGameObject->addComponent<CustomEngine::InputComponent>();
+
+		auto transform = ptrGameObject->getComponent<CustomEngine::TransformComponent>();
+
+		auto body = ptrGameObject->addComponent<CustomEngine::RigidbodyComponent>();
+
+		auto collider = ptrGameObject->addComponent<CustomEngine::SpriteColliderComponent>();
 	}
 
 	CustomEngine::GameObject* Player::getGameObject()
