@@ -19,13 +19,13 @@ namespace CustomEngine
 		{
 			sf::SoundBuffer soundBuf;
 			assert(soundBuf.loadFromFile(path));
-			sounds.insert({ eSoundEffect, soundBuf });
+			tracks.insert({ eSoundEffect, soundBuf });
 		}
 	}
 
 	sf::SoundBuffer& AudioManager::getSoundBuffer(const ESoundEffect eSoundEffect)
 	{
-		return sounds[eSoundEffect];
+		return tracks[eSoundEffect];
 	}
 
 	bool AudioManager::isMusicPlaying()
@@ -40,7 +40,7 @@ namespace CustomEngine
 
 	void AudioManager::playFullSound(const ESoundEffect eSoundEffect)
 	{
-		sf::Sound sound{ sounds[eSoundEffect] };
+		sf::Sound sound{ tracks[eSoundEffect] };
 
 		//sound.setVolume(GAME_SETTINGS.getSoundVolume());
 		sound.play();

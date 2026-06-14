@@ -47,8 +47,7 @@ namespace CustomEngine
 	{
 		if (flip != isFlipX)
 		{
-			auto scale = sprite->getScale();
-			sprite->setScale({ -scale.x, scale.y });
+			scale = { -scale.x, scale.y };
 			isFlipX = flip;
 		}
 	}
@@ -57,8 +56,7 @@ namespace CustomEngine
 	{
 		if (flip != isFlipY)
 		{
-			auto scale = sprite->getScale();
-			sprite->setScale({ scale.x, -scale.y });
+			scale = { scale.x, -scale.y };
 			isFlipY = flip;
 		}
 	}

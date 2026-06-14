@@ -10,6 +10,7 @@ namespace CustomEngine
 	class ResourceSystem
 	{
 	private:
+		std::map<std::string, sf::SoundBuffer*> sounds;
 		std::map<std::string, sf::Texture*> textures;
 		std::map<std::string, std::vector<sf::Texture*>> textureMaps;
 
@@ -35,6 +36,10 @@ namespace CustomEngine
 		sf::Texture* getTextureMapElementCopy(const std::string& name, int elementIndex) const;
 		int getTextureMapElementsCount(const std::string& name) const;
 		void deleteSharedTextureMap(const std::string& name);
+
+		void loadSound(const std::string& name, std::string sourcePath);
+		const sf::SoundBuffer* getSound(const std::string& name) const;
+		void deleteSound(const std::string& name);
 
 		void clear();
 	};
