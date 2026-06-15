@@ -1,5 +1,6 @@
 #include "pch.h"
 
+#include "Settings.h"
 #include "FollowComponent.h"
 
 namespace CustomEngine
@@ -44,16 +45,20 @@ namespace CustomEngine
 		Vector2Df targetPos = targetTransform->getWorldPosition();
 		Vector2Df directionPos = targetPos - currentPos;
 
-		float length = directionPos.getLength();
-
-		if (length > 0.001f)
+		// Follower have to located on target's review for following
+		if (std::abs(directionPos.x) <= SETTINGS.CAMERA_RESOLUTION.x && std::abs(directionPos.y) <= SETTINGS.CAMERA_RESOLUTION.y)
 		{
-			Vector2Df normalized = Vector2Df(directionPos.x / length, directionPos.y / length);
-			transform->moveBy(normalized * speed * deltaTime);
+			float length = directionPos.getLength();
 
-			if (spriteRender)
+			if (length > 0.001f)
 			{
-				spriteRender->flipX(directionPos.x < 0);
+				Vector2Df normalized = Vector2Df(directionPos.x / length, directionPos.y / length);
+				transform->moveBy(normalized * speed * deltaTime);
+
+				if (spriteRender)
+				{
+					spriteRender->flipX(directionPos.x < 0);
+				}
 			}
 		}
 	}

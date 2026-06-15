@@ -183,6 +183,7 @@
     <ClInclude Include="ResourceSystem.h" />
     <ClInclude Include="RigidbodyComponent.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="SpriteColliderComponent.h" />
     <ClInclude Include="SpriteDirectionComponent.h" />
     <ClInclude Include="SpriteRendererComponent.h" />

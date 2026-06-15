@@ -59,7 +59,7 @@ namespace CustomEngine
 	}
 	void GameWorld::lateUpdate()
 	{
-		for (int i = markedToDestroyGameObjects.size() - 1; i >= 0; i--)
+		for (int i = static_cast<int>(markedToDestroyGameObjects.size()) - 1; i >= 0; i--)
 		{
 			destroyGameObjectImmediate(markedToDestroyGameObjects[i]);
 		}
@@ -86,7 +86,7 @@ namespace CustomEngine
 
 	void GameWorld::clear()
 	{
-		for (int i = gameObjects.size() - 1; i >= 0; i--)
+		for (int i = static_cast<int>(gameObjects.size()) - 1; i >= 0; i--)
 		{
 			if (gameObjects[i] == nullptr)
 			{

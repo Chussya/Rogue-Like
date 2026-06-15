@@ -1,4 +1,6 @@
 #include "pch.h"
+
+#include "Settings.h"
 #include "CameraComponent.h"
 #include "TransformComponent.h"
 
@@ -6,7 +8,7 @@ namespace CustomEngine
 {
 	CameraComponent::CameraComponent(GameObject* gameObject) : Component(gameObject)
 	{
-		view = new sf::View(sf::FloatRect(0, 0, 800, -600));
+		view = new sf::View(sf::FloatRect(0, 0, SETTINGS.CAMERA_RESOLUTION.x, -SETTINGS.CAMERA_RESOLUTION.y));
 		transform = gameObject->getComponent<TransformComponent>();
 	}
 

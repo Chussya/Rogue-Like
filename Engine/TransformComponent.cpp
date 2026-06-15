@@ -271,7 +271,7 @@ namespace CustomEngine
 		scale.x = std::sqrt(transform.getMatrix()[0][0] * transform.getMatrix()[0][0] + transform.getMatrix()[1][0] * transform.getMatrix()[1][0]);
 		scale.y = std::sqrt(transform.getMatrix()[0][1] * transform.getMatrix()[0][1] + transform.getMatrix()[1][1] * transform.getMatrix()[1][1]);
 
-		rot = std::atan2(transform.getMatrix()[0][1], transform.getMatrix()[0][0]) * 180 / 3.14159265;
+		rot = std::atan2(transform.getMatrix()[0][1], transform.getMatrix()[0][0]) * 180 / 3.14159265f;
 	}
 
 	void TransformComponent::setLocalInfoFrom(const Matrix2D& transform) const
@@ -282,7 +282,7 @@ namespace CustomEngine
 		localScale.x = std::sqrt(transform.getMatrix()[0][0] * transform.getMatrix()[0][0] + transform.getMatrix()[1][0] * transform.getMatrix()[1][0]);
 		localScale.y = std::sqrt(transform.getMatrix()[0][1] * transform.getMatrix()[0][1] + transform.getMatrix()[1][1] * transform.getMatrix()[1][1]);
 
-		localRot = std::atan2(transform.getMatrix()[0][1], transform.getMatrix()[0][0]) * 180 / 3.14159265;
+		localRot = std::atan2(transform.getMatrix()[0][1], transform.getMatrix()[0][0]) * 180 / 3.14159265f;
 	}
 
 	void TransformComponent::updateLocalTransform() const
