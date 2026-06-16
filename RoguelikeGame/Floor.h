@@ -11,5 +11,7 @@ namespace RoguelikeGame
 
 	public:
 		Floor(const CustomEngine::Vector2Df& position);
+
+		CustomEngine::GameObject* getGameObject();
 	};
 }

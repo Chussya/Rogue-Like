@@ -16,4 +16,9 @@ namespace RoguelikeGame
 		renderer->setTexture(*CustomEngine::ResourceSystem::getInstance()->getTextureShared("txtr_floor"));
 		renderer->setPixelSize(128, 128);
 	}
+
+	CustomEngine::GameObject* Floor::getGameObject()
+	{
+		return ptrGameObject;
+	}
 }

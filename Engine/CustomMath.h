@@ -18,32 +18,32 @@ namespace CustomEngine
 			int mask;
 
 		public:
-			__declspec(dllexport) BitMask(Enum mask) : mask { static_cast<int>(mask) } {}
+			BitMask(Enum mask) : mask { static_cast<int>(mask) } {}
 
 			// Turn on mask without other changes
-			__declspec(dllexport) void AddMask(Enum flag)
+			void AddMask(Enum flag)
 			{
 				mask |= static_cast<int>(flag);
 			}
 
 			// Turn off mask without other changes
-			__declspec(dllexport) void DeleteMask(Enum flag)
+			void DeleteMask(Enum flag)
 			{
 				mask &= ~static_cast<int>(flag);
 			}
 
-			__declspec(dllexport) void SetMask(Enum mask)
+			void SetMask(Enum mask)
 			{
 				this->mask = static_cast<int>(mask);
 			}
 
-			__declspec(dllexport) bool IsBitMaskOn(Enum checkMask)
+			bool IsBitMaskOn(Enum checkMask)
 			{
 				return mask & static_cast<int>(checkMask);
 			}
 		};
 
-		__declspec(dllexport) static int getRandNumTo(int num)
+		static int getRandNumTo(int num)
 		{
 			return std::rand() % num;
 		}

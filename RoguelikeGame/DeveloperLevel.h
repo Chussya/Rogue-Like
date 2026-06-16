@@ -24,8 +24,18 @@ namespace RoguelikeGame
 		std::vector<std::unique_ptr<Wall>> walls;
 
 	public:
+		// getters and setters
+
+		std::vector<std::unique_ptr<Floor>>& getFloors();
+
+		// core methods
+
 		void start() override;
 		void restart() override;
 		void stop() override;
+
+		// additional methods
+
+		void createSpawner();
 	};
 }

@@ -1,9 +1,16 @@
 #include "DeveloperLevel.h"
 
+#include "EnemySpawner.h"
+
 using namespace CustomEngine;
 
 namespace RoguelikeGame
 {
+	std::vector<std::unique_ptr<Floor>>& DeveloperLevel::getFloors()
+	{
+		return floors;
+	}
+
 	void DeveloperLevel::start()
 	{
 		int width = 15;
@@ -71,7 +78,6 @@ namespace RoguelikeGame
 			}
 		}
 		player = std::make_shared<Player>(std::forward<CustomEngine::Vector2Df>({ width / 2 * 128.f, height / 2 * 128.f }));
-		enemy = std::make_shared<Enemy>(std::forward<CustomEngine::Vector2Df>({ width / 3 * 128.f, height / 3 * 128.f }), player->getGameObject());
 		music = std::make_unique<CustomMusic>("m_dungeonAmb");
 	}
 
@@ -84,5 +90,11 @@ namespace RoguelikeGame
 	void DeveloperLevel::stop()
 	{
 		GameWorld::getInstance()->clear();
+	}
+
+	void DeveloperLevel::createSpawner()
+	{
+		auto enemySpawner = std::make_shared<EnemySpawner>();
+		enemySpawner->spawn(this, player->getGameObject());
 	}
 }

@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Engine.h"
 #include "ResourceSystem.h"
-#include "DeveloperLevel.h"
+#include "LevelManager.h"
 
 using namespace RoguelikeGame;
 
@@ -17,8 +17,7 @@ int main()
 	CustomEngine::ResourceSystem::getInstance()->loadTexture("txtr_wall", "Resources/Image/wall.png");
 	CustomEngine::ResourceSystem::getInstance()->loadSound("m_dungeonAmb", "Resources/Audio/Music/dungeon_ambience.ogg");
 
-	auto developerLevel = std::make_shared<DeveloperLevel>();
-	developerLevel->start();
+	LevelManager::getInstance()->loadLevel();
 
 	CustomEngine::Engine::getInstance()->run();
 
