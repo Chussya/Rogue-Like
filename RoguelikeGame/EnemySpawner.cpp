@@ -4,7 +4,7 @@
 
 namespace RoguelikeGame
 {
-    void EnemySpawner::spawn(DeveloperLevel* level, CustomEngine::GameObject* player)
+    void EnemySpawner::spawn(DeveloperLevel* level)
     {
         if (level->getFloors().empty())
             return;
@@ -14,6 +14,6 @@ namespace RoguelikeGame
 
         CustomEngine::Vector2Df spawnPos{ floor->getGameObject()->getComponent<CustomEngine::TransformComponent>()->getWorldPosition() };
 
-        std::make_unique<Enemy>(spawnPos, player);
+        std::make_unique<Enemy>(spawnPos);
     }
 }

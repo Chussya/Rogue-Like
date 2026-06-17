@@ -1,6 +1,7 @@
 #include "pch.h"
 
 #include "Settings.h"
+#include "GameWorld.h"
 #include "FollowComponent.h"
 
 namespace CustomEngine
@@ -13,6 +14,16 @@ namespace CustomEngine
 		if (transform == nullptr)
 		{
 			gameObject->removeComponent(this);
+		}
+	}
+
+	void FollowComponent::setHeroAsTarget()
+	{
+		GameObject* ptrHero = GameWorld::getInstance()->getPlayer();
+
+		if (ptrHero)
+		{
+			targetTransform = ptrHero->getComponent<TransformComponent>();
 		}
 	}
 

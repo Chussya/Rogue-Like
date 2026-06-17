@@ -7,7 +7,7 @@ namespace RoguelikeGame
 	class EnemySpawner
 	{
 	public:
-		void spawn(DeveloperLevel* level, CustomEngine::GameObject* player);
+		void spawn(DeveloperLevel* level);
 	};
 }
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "Vector2D.h"
 
 namespace CustomEngine
@@ -8,6 +10,8 @@ namespace CustomEngine
 	{
 	public:
 		const Vector2Df CAMERA_RESOLUTION = {800, 600};
+
+		const std::string PLAYER_ID{ "Hero" };
 
 		// Single instance of game settings
 		static Settings& getInstance()

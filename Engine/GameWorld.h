@@ -9,6 +9,9 @@ namespace CustomEngine
 	{
 	private:
 		float fixedCounter{ 0.f };
+
+		GameObject* ptrHero{};
+
 		std::vector<GameObject*> gameObjects = {};
 		std::vector<GameObject*> markedToDestroyGameObjects = {};
 
@@ -34,5 +37,7 @@ namespace CustomEngine
 		void clear();
 
 		void print() const;
+
+		GameObject* getPlayer();
 	};
 }

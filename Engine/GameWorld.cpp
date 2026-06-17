@@ -1,5 +1,8 @@
 #include "pch.h"
+
 #include "GameWorld.h"
+
+#include "Settings.h"
 
 namespace CustomEngine
 {
@@ -76,6 +79,11 @@ namespace CustomEngine
 	{
 		GameObject* newGameObject = new GameObject(name);
 		gameObjects.push_back(newGameObject);
+
+		if (name == SETTINGS.PLAYER_ID)
+		{
+			ptrHero = newGameObject;
+		}
 		return newGameObject;
 	}
 
@@ -114,5 +122,10 @@ namespace CustomEngine
 				obj->print();
 			}
 		}
+	}
+
+	GameObject* GameWorld::getPlayer()
+	{
+		return ptrHero;
 	}
 }

@@ -18,6 +18,7 @@ namespace CustomEngine
 	public:
 		FollowComponent(GameObject* gameObject);
 
+		void setHeroAsTarget();
 		void setTarget(GameObject* traget);
 		void setSpeed(const float speed);
 		float getSpeed() const;

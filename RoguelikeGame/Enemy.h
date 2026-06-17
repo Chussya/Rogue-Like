@@ -16,7 +16,7 @@ namespace RoguelikeGame
 		CustomEngine::GameObject* gameObject;
 
 	public:
-		Enemy(const CustomEngine::Vector2Df& position, CustomEngine::GameObject* target);
+		Enemy(const CustomEngine::Vector2Df& position);
 
 		CustomEngine::GameObject* getGameObject();
 	};

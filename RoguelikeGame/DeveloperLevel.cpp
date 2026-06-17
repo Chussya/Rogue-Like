@@ -95,6 +95,6 @@ namespace RoguelikeGame
 	void DeveloperLevel::createSpawner()
 	{
 		auto enemySpawner = std::make_shared<EnemySpawner>();
-		enemySpawner->spawn(this, player->getGameObject());
+		enemySpawner->spawn(this);
 	}
 }

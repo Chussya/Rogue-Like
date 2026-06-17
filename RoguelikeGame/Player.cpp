@@ -1,5 +1,6 @@
 #include "Player.h"
 
+#include <Settings.h>
 #include <ResourceSystem.h>
 #include <MovementComponent.h>
 #include <SpriteColliderComponent.h>
@@ -9,7 +10,7 @@ namespace RoguelikeGame
 {
 	Player::Player(const CustomEngine::Vector2Df& position)
 	{
-		ptrGameObject = CustomEngine::GameWorld::getInstance()->createGameObject("Hero");
+		ptrGameObject = CustomEngine::GameWorld::getInstance()->createGameObject(CustomEngine::SETTINGS.PLAYER_ID);
 
 		auto transform = ptrGameObject->getComponent<CustomEngine::TransformComponent>();
 		transform->setWorldPosition(position);

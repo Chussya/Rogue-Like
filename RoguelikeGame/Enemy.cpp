@@ -8,7 +8,7 @@
 
 namespace RoguelikeGame
 {
-	Enemy::Enemy(const CustomEngine::Vector2Df& position, CustomEngine::GameObject* target)
+	Enemy::Enemy(const CustomEngine::Vector2Df& position)
 	{
 		gameObject = CustomEngine::GameWorld::getInstance()->createGameObject("Nito");
 		auto transform = gameObject->getComponent<CustomEngine::TransformComponent>();
@@ -19,7 +19,7 @@ namespace RoguelikeGame
 		renderer->setPixelSize(128, 128);
 
 		auto follower = gameObject->addComponent<CustomEngine::FollowComponent>();
-		follower->setTarget(target);
+		follower->setHeroAsTarget();
 		follower->setSpeed(100.f);
 
 		auto rigidbody = gameObject->addComponent<CustomEngine::RigidbodyComponent>();
