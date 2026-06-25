@@ -49,6 +49,7 @@ namespace CustomEngine
 			RenderSystem::getInstance()->getMainWindow().clear();
 
 			GameWorld::getInstance()->update(deltaTime);
+			GameWorld::getInstance()->fixedUpdate(deltaTime);
 			GameWorld::getInstance()->render();
 			GameWorld::getInstance()->lateUpdate();
 

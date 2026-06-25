@@ -1,22 +1,39 @@
 #include "Player.h"
 
+#include <Settings.h>
 #include <ResourceSystem.h>
+#include <MovementComponent.h>
+#include <SpriteColliderComponent.h>
+#include <SpriteDirectionComponent.h>
 
 namespace RoguelikeGame
 {
-	Player::Player()
+	Player::Player(const CustomEngine::Vector2Df& position)
 	{
-		ptrGameObject = CustomEngine::GameWorld::getInstance()->createGameObject();
-		auto playerRenderer = ptrGameObject->addComponent<CustomEngine::SpriteRendererComponent>();
+		ptrGameObject = CustomEngine::GameWorld::getInstance()->createGameObject(CustomEngine::SETTINGS.PLAYER_ID);
 
-		playerRenderer->setTexture(*CustomEngine::ResourceSystem::getInstance()->getTextureShared("ball"));
-		playerRenderer->setPixelSize(32, 32);
+		auto transform = ptrGameObject->getComponent<CustomEngine::TransformComponent>();
+		transform->setWorldPosition(position);
 
-		auto playerCamera = ptrGameObject->addComponent<CustomEngine::CameraComponent>();
-		playerCamera->setWindow(&CustomEngine::RenderSystem::getInstance()->getMainWindow());
-		playerCamera->setBaseResolution(1280, 720);
+		auto renderer = ptrGameObject->addComponent<CustomEngine::SpriteRendererComponent>();
+		renderer->setTexture(*CustomEngine::ResourceSystem::getInstance()->getTextureShared("txtr_player"));
+		renderer->setPixelSize(128, 128);
 
-		auto playerInput = ptrGameObject->addComponent<CustomEngine::InputComponent>();
+		auto camera = ptrGameObject->addComponent<CustomEngine::CameraComponent>();
+		camera->setWindow(&CustomEngine::RenderSystem::getInstance()->getMainWindow());
+		camera->setBaseResolution(1280, 720);
+
+		auto input = ptrGameObject->addComponent<CustomEngine::InputComponent>();
+
+		auto movement = ptrGameObject->addComponent<CustomEngine::MovementComponent>();
+		movement->setSpeed(400.f);
+
+		auto spriteDirection = ptrGameObject->addComponent<CustomEngine::SpriteDirectionComponent>();
+
+		auto rigidbody = ptrGameObject->addComponent<CustomEngine::RigidbodyComponent>();
+		rigidbody->setKinematic(false);
+
+		auto collider = ptrGameObject->addComponent<CustomEngine::SpriteColliderComponent>();
 	}
 
 	CustomEngine::GameObject* Player::getGameObject()

@@ -7,7 +7,7 @@ namespace CustomEngine
 	class RenderSystem
 	{
 	private:
-		sf::RenderWindow* window;
+		sf::RenderWindow* window{};
 
 		RenderSystem(){}
 		~RenderSystem(){}

@@ -9,6 +9,7 @@ namespace CustomEngine
 {
 	SpriteRendererComponent::SpriteRendererComponent(GameObject* ptrGameObject) : Component(ptrGameObject)
 	{
+		scale = { 1, -1 };
 		sprite = new sf::Sprite();
 		sprite->setScale({ 1, -1 });
 
@@ -39,15 +40,14 @@ namespace CustomEngine
 	void SpriteRendererComponent::setPixelSize(const int width, const int height)
 	{
 		auto originalSize = sprite->getTexture()->getSize();
-		sprite->setScale(static_cast<float>(width) / static_cast<float>(originalSize.x), -static_cast<float>(height) / static_cast<float>(originalSize.y));
+		scale = { (float)width / (float)originalSize.x, -(float)height / (float)originalSize.y };
 	}
 
 	void SpriteRendererComponent::flipX(bool flip)
 	{
 		if (flip != isFlipX)
 		{
-			auto scale = sprite->getScale();
-			sprite->setScale({ -scale.x, scale.y });
+			scale = { -scale.x, scale.y };
 			isFlipX = flip;
 		}
 	}
@@ -56,8 +56,7 @@ namespace CustomEngine
 	{
 		if (flip != isFlipY)
 		{
-			auto scale = sprite->getScale();
-			sprite->setScale({ scale.x, -scale.y });
+			scale = { scale.x, -scale.y };
 			isFlipY = flip;
 		}
 	}
@@ -71,6 +70,10 @@ namespace CustomEngine
 		{
 			sprite->setPosition(convert<sf::Vector2f, Vector2Df>(transform->getWorldPosition()));
 			sprite->setRotation(transform->getWorldRotation());
+
+			auto transformScale = convert<sf::Vector2f, Vector2Df>(transform->getWorldScale());
+			sprite->setScale({ scale.x * transformScale.x, scale.y * transformScale.y });
+
 			RenderSystem::getInstance()->render(*sprite);
 		}
 	}

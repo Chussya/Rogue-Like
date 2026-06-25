@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 namespace CustomEngine
 {
 	template<class T>

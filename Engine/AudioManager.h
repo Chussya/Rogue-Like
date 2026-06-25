@@ -18,7 +18,7 @@ namespace CustomEngine
 		};
 
 	private:
-		std::unordered_map<ESoundEffect, sf::SoundBuffer> sounds;
+		std::unordered_map<ESoundEffect, sf::SoundBuffer> tracks;
 		sf::Music music;
 
 	public:

@@ -155,6 +155,34 @@ namespace CustomEngine
 		textureMaps.erase(textureMap);
 	}
 
+	void ResourceSystem::loadSound(const std::string& name, std::string sourcePath)
+	{
+		if (sounds.find(name) != sounds.end())
+		{
+			return;
+		}
+
+		sf::SoundBuffer* newSound = new sf::SoundBuffer();
+		if (newSound->loadFromFile(sourcePath))
+		{
+			sounds.emplace(name, newSound);
+		}
+	}
+
+	const sf::SoundBuffer* ResourceSystem::getSound(const std::string& name) const
+	{
+		return sounds.find(name)->second;
+	}
+
+	void ResourceSystem::deleteSound(const std::string& name)
+	{
+		auto soundPair = sounds.find(name);
+
+		sf::SoundBuffer* deletingSound = soundPair->second;
+		sounds.erase(soundPair);
+		delete deletingSound;
+	}
+
 	void ResourceSystem::clear()
 	{
 		deleteAllTextures();

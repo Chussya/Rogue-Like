@@ -4,6 +4,7 @@
 #include<memory>
 
 #include "TransformComponent.h"
+#include "Vector2D.h"
 
 namespace CustomEngine
 {
@@ -13,6 +14,7 @@ namespace CustomEngine
 		bool isFlipX{ false };
 		bool isFlipY{ false };
 
+		Vector2Df scale;
 		sf::Sprite* sprite;
 		TransformComponent* transform;
 

@@ -15,7 +15,7 @@ namespace RoguelikeGame
 		CustomEngine::GameObject* ptrGameObject;
 
 	public:
-		Player();
+		Player(const CustomEngine::Vector2Df& position);
 		CustomEngine::GameObject* getGameObject();
 	};
 }
